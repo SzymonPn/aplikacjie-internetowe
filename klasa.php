@@ -13,10 +13,15 @@ class Fruit{
 }
 $apple = new Fruit();
 $banana = new Fruit();
+$orange= new Fruit();
+
 $apple->setName('Apple');
 $banana->setName('Banana');
+$orange->setName("Orange");
 
 echo $apple->getName();
 echo "<br>";
 echo $banana->getName();
+echo "<br>";
+echo $orange->getName();
 ?>
