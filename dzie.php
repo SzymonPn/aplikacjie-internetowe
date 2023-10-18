@@ -6,7 +6,7 @@ class Fruit {
     $this->name = $name;
     $this->color = $color;
   }
-  public function intro() {
+  protected function intro() {
     echo "The fruit is {$this->name} and the color is {$this->color}.";
   }
 }
