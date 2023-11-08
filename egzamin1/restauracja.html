@@ -12,8 +12,27 @@
     <div class="lewy">
         <img src="menu.jpg" alt="Nasze dania">
     </div>
-    <div class="prawy"></div>
-    <div class="dolny"></div>
-    <div class="stopka"></div>
+    <div class="prawy">
+        <h4>U nas dobrze zjesz</h4>
+        <ol>
+            <li>Obiady od 40 zł; </li>
+            <li>Przekąski od 10 zł;</li>
+            <li>Kolacje od 20 zł</li>
+        </ol>
+    </div>
+    <div class="dolny">
+        <h2>Zarezerwuj stolik on-line</h2>
+        <form action="rezerwacja.php" method="post">
+            <label>Data (format rrrr-mm-dd):<br><input type="text" name="data"></label><br> 
+            <label>Ile osób?<br><input type="number" name="os"></label><br> 
+            <label>Twój numer telefonu<br><input type="text" name="nrtel"></label><br> 
+            <label><input type="checkbox" name="daneos">Zgadzam się na przetwarzanie moich danych osobowych</label><br>
+            <input type="reset" value="WYCZYŚĆ">
+            <input type="submit" value="REZERWUJ">
+        </form>
+    </div>
+    <div class="stopka">
+        <p>Stronę internetową opracował: SzymonP</p>
+    </div>
 </body>
 </html>
