@@ -1,0 +1,4 @@
+1: select nazwa, cena from towary limit 4; 
+2: select cena from towary where nazwa="Ekierka";
+3: update dostawcy set nazwa="Artykuly szkolne" where id=2;
+4: SELECT promocja, count(promocja) as podsumowanie from towary group by promocja;
