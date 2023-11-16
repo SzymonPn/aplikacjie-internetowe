@@ -13,11 +13,13 @@
     background-color: #EFEFEF;
     height: 400px;
     width: 25%;
+    float: left;
 }
 .srodkowy{
     background-color: #90CAF9;
     height: 400px;
     width:50%;
+    float: left;
 }
 table{
     margin-left: 10px;
@@ -37,13 +39,4 @@ input[type="number"]{
 }
 .stopka{
     clear: both;
-}
-.lewy{
-    float: left;
-}
-.prawy{
-    float: left;
-}
-.srodkowy{
-    float:left;
 }

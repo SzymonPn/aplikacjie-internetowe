@@ -12,7 +12,6 @@
     </div>
     <div class="lewy">
         <h2>Nasze ceny</h2>
-        <p>Tabela składająca się z czterech wierszy i dwóch kolumn o zawartości generowanej skryptem 1</p>
         <?php 
             $servername = "localhost";
             $username = "root";
@@ -53,20 +52,21 @@
             $username = "root";
             $password = "";
             $dbname = "sklep";
-            $conn = mysqli_connect($servername, $username, $password,$dbname);
             if(isset($_POST["produkt"]) && isset($_POST["liczbaSztuk"])){
                 $nazwa=$_POST["produkt"];
                 $ilosc=$_POST["liczbaSztuk"];
+                $conn = mysqli_connect($servername, $username, $password,$dbname);
                 if (!$conn) {
                   die("Connection failed: " . mysqli_connect_error());
                 }
-                $slq="select cena from towary where nazwa='$nazwa';";
-                if($wynik1=mysqli_query($conn,$sql)){
-                    $wiersz=mysqli_fetch_row($wynik1);
-
-                    echo "wartość zakupów:". $wiersz[0]*$ilosc;
+                $sql="select cena from towary where nazwa='$nazwa';";
+                $wynik1=mysqli_query($conn,$sql);
+                if(mysqli_num_rows($wynik1)>0){
+                    $wiersz=mysqli_fetch_assoc($wynik1);
+                    echo "wartość zakupów:". $wiersz["cena"]*$ilosc;
                 }
             }
+            mysqli_close($conn);
             
         ?>
     </div>
