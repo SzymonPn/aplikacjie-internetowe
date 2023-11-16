@@ -65,9 +65,8 @@
                     $wiersz=mysqli_fetch_assoc($wynik1);
                     echo "wartość zakupów:". $wiersz["cena"]*$ilosc;
                 }
-            }
-            mysqli_close($conn);
-            
+                mysqli_close($conn);
+            } 
         ?>
     </div>
     <div class="prawy">
