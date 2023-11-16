@@ -34,8 +34,8 @@
                 if(mysqli_query($conn,$sql)){
                     echo "Dodano czytelnika $imie $nazwisko";
                 }
+                mysqli_close($conn);
             }
-            
         ?>
     </div>
     <div class="srodkowy">
@@ -45,6 +45,26 @@
     </div>
     <div class="prawy">
         <h4>Nasi czytelnicy:</h4>
+        <?php 
+            $servername = "localhost";
+            $username = "root";
+            $password = "";
+            $dbname = "biblioteka";
+            $conn = mysqli_connect($servername, $username, $password,$dbname);
+            if (!$conn) {
+              die("Connection failed: " . mysqli_connect_error());
+            }
+            $sql="SELECT imie, nazwisko FROM czytelnicy ORDER BY nazwisko;";
+            $wynik=mysqli_query($conn,$sql);
+            echo "<ol>";
+            if(mysqli_num_rows($wynik)>0){
+                while($row=mysqli_fetch_assoc($wynik)){
+                    echo "<li>$row[imie] $row[nazwisko]</li>";
+                };
+            };
+            echo "</ol>";
+            mysqli_close($conn);
+        ?>
     </div>
     <div class="stopka">
         <p>Projekt witryny: Szymon  Pniaczek</p>
